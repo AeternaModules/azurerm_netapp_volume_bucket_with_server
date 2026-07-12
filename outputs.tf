@@ -1,3 +1,7 @@
+output "netapp_volume_bucket_with_servers_id" {
+  description = "Map of id values across all netapp_volume_bucket_with_servers, keyed the same as var.netapp_volume_bucket_with_servers"
+  value       = { for k, v in azurerm_netapp_volume_bucket_with_server.netapp_volume_bucket_with_servers : k => v.id }
+}
 output "netapp_volume_bucket_with_servers_file_system_cifs_username" {
   description = "Map of file_system_cifs_username values across all netapp_volume_bucket_with_servers, keyed the same as var.netapp_volume_bucket_with_servers"
   value       = { for k, v in azurerm_netapp_volume_bucket_with_server.netapp_volume_bucket_with_servers : k => v.file_system_cifs_username }
