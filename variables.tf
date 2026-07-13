@@ -26,12 +26,12 @@ EOT
     name                      = string
     volume_id                 = string
     file_system_cifs_username = optional(string)
-    path                      = optional(string) # Default: "/"
-    permissions               = optional(string) # Default: "ReadOnly"
+    path                      = optional(string)
+    permissions               = optional(string)
     server = object({
       certificate_pem                = optional(string)
       fqdn                           = string
-      on_certificate_conflict_action = optional(string) # Default: "Fail"
+      on_certificate_conflict_action = optional(string)
     })
     file_system_nfs_user = optional(object({
       group_id = number
